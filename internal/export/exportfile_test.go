@@ -84,6 +84,18 @@ func TestMarshalUnmarshalExportFile(t *testing.T) {
 			DaysSinceSymptomOnset: proto.Int32(-1),
 			ReportType:            verifyapi.ReportTypeSelfReport,
 		},
+		{
+			ExposureKey:           []byte("JKL"),
+			Regions:               []string{"US"},
+			IntervalNumber:        118,
+			IntervalCount:         1,
+			CreatedAt:             batchEndTime,
+			LocalProvenance:       true,
+			TransmissionRisk:      1,
+			DaysSinceSymptomOnset: proto.Int32(-1),
+			ReportType:            verifyapi.ReportTypeConfirmed,
+			VaccineStatus:         true,
+		},
 	}
 	revisedExposures := []*publishmodel.Exposure{
 		{
