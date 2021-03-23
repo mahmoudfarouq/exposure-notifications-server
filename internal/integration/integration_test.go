@@ -228,6 +228,9 @@ func exportedKeysFrom(tb testing.TB, keys []verifyapi.ExposureKey) []*exportpb.T
 			// Keys are generated 1 day ago and then -1 day for each additional.
 			DaysSinceOnsetOfSymptoms: proto.Int32(daysSince),
 		}
+		if vaccineStatus {
+			s[i].Vaccinated = proto.Bool(vaccineStatus)
+		}
 		daysSince++
 	}
 
